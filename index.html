@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#182c45" />
+  <meta name="description" content="An interactive pop-up book: Johnny Builds to Mars." />
+  <title>Johnny Builds to Mars — Parker &amp; Pine</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell" aria-label="Johnny Builds to Mars interactive storybook">
+    <header class="topbar">
+      <div class="brand-lockup">
+        <span class="brand-mark" aria-hidden="true">P</span>
+        <div>
+          <p class="eyebrow">Parker &amp; Pine present</p>
+          <h1>Johnny Builds to Mars</h1>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <span class="progress-label" id="progressLabel">Cover</span>
+        <button class="sound-button" id="soundButton" type="button" aria-pressed="false" title="Toggle story sounds">
+          <span aria-hidden="true">S</span><span class="sr-only">Toggle story sounds</span>
+        </button>
+      </div>
+    </header>
+
+    <section class="stage" id="stage" aria-live="polite">
+      <div class="table-sheen" aria-hidden="true"></div>
+
+      <div class="book-wrap is-closed" id="bookWrap">
+        <button class="cover" id="cover" type="button" aria-label="Open Johnny Builds to Mars">
+          <div class="cover-stars" aria-hidden="true">
+            <i style="--x: 11%; --y: 18%; --s: 5px"></i><i style="--x: 22%; --y: 38%; --s: 3px"></i>
+            <i style="--x: 84%; --y: 19%; --s: 4px"></i><i style="--x: 74%; --y: 38%; --s: 6px"></i>
+            <i style="--x: 91%; --y: 70%; --s: 3px"></i><i style="--x: 15%; --y: 73%; --s: 4px"></i>
+            <i style="--x: 52%; --y: 9%; --s: 3px"></i>
+          </div>
+          <div class="cover-copy">
+            <p class="cover-kicker">A Parker &amp; Pine pop-up adventure</p>
+            <h2>Johnny<br /><em>Builds to Mars</em></h2>
+          </div>
+          <div class="cover-orbit orbit-one" aria-hidden="true"></div>
+          <div class="cover-orbit orbit-two" aria-hidden="true"></div>
+          <div class="cover-earth" aria-hidden="true"></div>
+          <div class="cover-mars" aria-hidden="true"></div>
+          <div class="cover-rocket" aria-hidden="true">
+            <span class="rocket-flame"></span>
+            <span class="rocket-window"></span>
+            <span class="rocket-fin left"></span><span class="rocket-fin right"></span>
+          </div>
+          <div class="cover-stamp">VOL. 01<br /><strong>JB→M</strong></div>
+        </button>
+
+        <div class="book" id="book" hidden>
+          <div class="page-spine" aria-hidden="true"></div>
+
+          <article class="story-page" id="storyPage">
+            <div class="page-corner" aria-hidden="true"></div>
+            <p class="page-number" id="pageNumber">01</p>
+            <div class="story-content" id="storyContent"></div>
+            <div class="page-footer">
+              <span class="footer-rule"></span><span id="footerHint">Draw it. Dream it. Build it.</span><span class="footer-rule"></span>
+            </div>
+          </article>
+
+          <article class="interactive-page" id="interactivePage">
+            <div class="interactive-content" id="interactiveContent"></div>
+            <div class="page-corner right" aria-hidden="true"></div>
+          </article>
+        </div>
+      </div>
+
+      <div class="book-controls" id="bookControls" hidden>
+        <button class="nav-button" id="prevButton" type="button" aria-label="Go back one page">
+          <span>Back</span>
+        </button>
+        <div class="page-dots" id="pageDots" role="tablist" aria-label="Book pages"></div>
+        <button class="nav-button" id="nextButton" type="button" aria-label="Go to the next page">
+          <span>Next</span>
+        </button>
+      </div>
+    </section>
+
+    <footer class="app-footer">
+      <span>Made for curious hands</span>
+      <span class="footer-dot">·</span>
+    </footer>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
